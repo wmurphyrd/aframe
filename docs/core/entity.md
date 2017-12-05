@@ -454,7 +454,7 @@ entity.is('selected');  // >> false
 | componentinitialized | One of the entity's components was initialized.                                                                                  |
 | componentremoved | One of the entity's components was removed.                                                                                      |
 | loaded           | The entity has attached and initialized its components.                                                                          |
-| object3dset      | `THREE.Object3D` was set on entity using `setObject3D(name)`. Event detail will contain `name` used to set on the `object3DMap`. |
+| object3dset      | `THREE.Object3D` was set on entity using `setObject3D(name)`.                                                                    |
 | pause            | The entity is now inactive and paused in terms of dynamic behavior.                                                              |
 | play             | The entity is now active and playing in terms of dynamic behavior.                                                               |
 | stateadded       | The entity received a new state.                                                                                                 |
@@ -478,6 +478,10 @@ Below is what the event detail contains for each event:
 | stateadded           | state     | The state that was attached (string).              |
 | stateremoved         | state     | The state that was detached (string).              |
 | schemachanged        | component | Name of component that had it's schema changed.    |
+| object3dset          | object    | The `Object3d` which was set                       |
+|                      | target    | The entity upon which the object was set           |
+|                      | type      | The `name` used to set in the `object3DMap`        |
+
 
 #### Listening for Component Changes
 
