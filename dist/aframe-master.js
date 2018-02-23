@@ -65938,7 +65938,7 @@ function extend() {
 },{}],76:[function(_dereq_,module,exports){
 module.exports={
   "name": "aframe",
-  "version": "0.7.0",
+  "version": "0.7.9",
   "description": "A web framework for building virtual reality experiences.",
   "homepage": "https://aframe.io/",
   "main": "dist/aframe-master.js",
@@ -78271,7 +78271,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 0.7.0 (Date 2018-02-23, Commit #66fdeba)');
+console.log('A-Frame Version: 0.7.9 (Date 2018-02-23, Commit #6b9c6fa)');
 console.log('three Version:', pkg.dependencies['three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);
 
