@@ -58902,50 +58902,32 @@ exports.right = function(str){
 module.exports={
   "_args": [
     [
-      {
-        "raw": "webvr-polyfill@^0.9.40",
-        "scope": null,
-        "escapedName": "webvr-polyfill",
-        "name": "webvr-polyfill",
-        "rawSpec": "^0.9.40",
-        "spec": ">=0.9.40 <0.10.0",
-        "type": "range"
-      },
-      "D:\\git\\aframe"
+      "webvr-polyfill@0.9.41",
+      "C:\\Users\\willi\\git\\aframe"
     ]
   ],
-  "_from": "webvr-polyfill@>=0.9.40 <0.10.0",
+  "_from": "webvr-polyfill@0.9.41",
   "_id": "webvr-polyfill@0.9.41",
-  "_inCache": true,
+  "_inBundle": false,
+  "_integrity": "sha1-3KrtBeqOFKRLYpZ5yjK5o1eA4OM=",
   "_location": "/webvr-polyfill",
-  "_nodeVersion": "8.6.0",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/webvr-polyfill-0.9.41.tgz_1513211986286_0.6021944496314973"
-  },
-  "_npmUser": {
-    "name": "jsantell",
-    "email": "jsantell@gmail.com"
-  },
-  "_npmVersion": "5.3.0",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "webvr-polyfill@^0.9.40",
-    "scope": null,
-    "escapedName": "webvr-polyfill",
+    "type": "version",
+    "registry": true,
+    "raw": "webvr-polyfill@0.9.41",
     "name": "webvr-polyfill",
-    "rawSpec": "^0.9.40",
-    "spec": ">=0.9.40 <0.10.0",
-    "type": "range"
+    "escapedName": "webvr-polyfill",
+    "rawSpec": "0.9.41",
+    "saveSpec": null,
+    "fetchSpec": "0.9.41"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/webvr-polyfill/-/webvr-polyfill-0.9.41.tgz",
-  "_shasum": "dcaaed05ea8e14a44b629679ca32b9a35780e0e3",
-  "_shrinkwrap": null,
-  "_spec": "webvr-polyfill@^0.9.40",
-  "_where": "D:\\git\\aframe",
+  "_spec": "0.9.41",
+  "_where": "C:\\Users\\willi\\git\\aframe",
   "authors": [
     "Boris Smus <boris@smus.com>",
     "Brandon Jones <tojiro@gmail.com>",
@@ -58954,7 +58936,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/googlevr/webvr-polyfill/issues"
   },
-  "dependencies": {},
   "description": "Use WebVR today, on mobile or desktop, without requiring a special browser build.",
   "devDependencies": {
     "chai": "^3.5.0",
@@ -58964,13 +58945,6 @@ module.exports={
     "webpack": "^2.6.1",
     "webpack-dev-server": "2.7.1"
   },
-  "directories": {},
-  "dist": {
-    "integrity": "sha512-xgZPm7DXd2iUn4wh+/ubh1AzYWaHlx6VCmpxgTvoKzi1sMz9ePChQvsq1tm18aUfuzs6dtMrnNWoaQIwl81QsQ==",
-    "shasum": "dcaaed05ea8e14a44b629679ca32b9a35780e0e3",
-    "tarball": "https://registry.npmjs.org/webvr-polyfill/-/webvr-polyfill-0.9.41.tgz"
-  },
-  "gitHead": "878873d2edef3308f1d702abb72842c61541e8fe",
   "homepage": "https://github.com/googlevr/webvr-polyfill",
   "keywords": [
     "vr",
@@ -58978,23 +58952,7 @@ module.exports={
   ],
   "license": "Apache-2.0",
   "main": "src/node-entry",
-  "maintainers": [
-    {
-      "name": "jsantell",
-      "email": "jsantell@gmail.com"
-    },
-    {
-      "name": "toji",
-      "email": "tojiro@gmail.com"
-    },
-    {
-      "name": "smus",
-      "email": "boris@smus.com"
-    }
-  ],
   "name": "webvr-polyfill",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/googlevr/webvr-polyfill.git"
@@ -72198,10 +72156,10 @@ module.exports.Component = registerComponent('windows-motion-controls', {
     var self = this;
     var el = this.el;
     this.onButtonChanged = bind(this.onButtonChanged, this);
-    this.onButtonDown = function (evt) { onButtonEvent(evt, 'down', self); };
-    this.onButtonUp = function (evt) { onButtonEvent(evt, 'up', self); };
-    this.onButtonTouchStart = function (evt) { onButtonEvent(evt, 'touchstart', self); };
-    this.onButtonTouchEnd = function (evt) { onButtonEvent(evt, 'touchend', self); };
+    this.onButtonDown = function (evt) { onButtonEvent(evt.detail.id, 'down', self); };
+    this.onButtonUp = function (evt) { onButtonEvent(evt.detail.id, 'up', self); };
+    this.onButtonTouchStart = function (evt) { onButtonEvent(evt.detail.id, 'touchstart', self); };
+    this.onButtonTouchEnd = function (evt) { onButtonEvent(evt.detail.id, 'touchend', self); };
     this.onControllerConnected = function () { self.setModelVisibility(true); };
     this.onControllerDisconnected = function () { self.setModelVisibility(false); };
     this.controllerPresent = false;
@@ -78271,7 +78229,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 0.7.9 (Date 2018-02-23, Commit #6b9c6fa)');
+console.log('A-Frame Version: 0.7.9 (Date 2018-02-26, Commit #8f8c01dd)');
 console.log('three Version:', pkg.dependencies['three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);
 
