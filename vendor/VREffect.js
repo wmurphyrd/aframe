@@ -8,7 +8,7 @@
  * Chromium: https://webvr.info/get-chrome
  *
  */
-
+THREE = window.THREE
 THREE.VREffect = function( renderer, onError ) {
 
 	var vrDisplay, vrDisplays;
@@ -27,7 +27,7 @@ THREE.VREffect = function( renderer, onError ) {
 	window.addEventListener('vrdisplayconnect', function (evt) { vrDisplay = evt.display; });
 	window.addEventListener('vrdisplaydisconnect', function (evt) {
 		var f;
-		
+
 		scope.exitPresent();
 		// Cancels current request animation frame.
 		f = scope.cancelAnimationFrame();
