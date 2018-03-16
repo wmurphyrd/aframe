@@ -49716,7 +49716,7 @@ function rebuildAttribute (attrib, data, itemSize) {
 * @author Tim Knip / http://www.floorplanner.com/ / tim at floorplanner.com
 * @author Tony Parisi / http://www.tonyparisi.com/
 */
-
+var THREE = window.THREE
 THREE.ColladaLoader = function () {
 
 	var COLLADA = null;
@@ -55258,7 +55258,7 @@ THREE.ColladaLoader = function () {
  * @author Takahiro / https://github.com/takahirox
  * @author Don McCurdy / https://www.donmccurdy.com
  */
-
+var THREE = window.THREE
 THREE.GLTFLoader = ( function () {
 
 	function GLTFLoader( manager ) {
@@ -57663,7 +57663,7 @@ THREE.GLTFLoader = ( function () {
  *
  * @author angelxuanchang
  */
-
+var THREE = window.THREE
 THREE.MTLLoader = function ( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
@@ -58214,7 +58214,7 @@ THREE.MTLLoader.MaterialCreator.prototype = {
 /**
  * @author mrdoob / http://mrdoob.com/
  */
-
+var THREE = window.THREE
 THREE.OBJLoader = ( function () {
 
 	// o object_name | g group_name
@@ -73903,12 +73903,10 @@ var proto = Object.create(ANode.prototype, {
     value: function (name) {
       var component;
       var isDefault;
-      var isMixedIn;
 
       // Don't remove default or mixed-in components.
       isDefault = name in this.defaultComponents;
-      isMixedIn = isComponentMixedIn(name, this.mixinEls);
-      if (isDefault || isMixedIn) { return; }
+      if (isDefault) { return; }
 
       component = this.components[name];
       if (!component) { return; }
@@ -74032,7 +74030,7 @@ var proto = Object.create(ANode.prototype, {
 
       // Remove component.
       if (component && propertyName === undefined) {
-        this.setEntityAttribute(attr, undefined, null);
+        this.removeComponent(attr);
         // Do not remove the component from the DOM if default component.
         if (this.components[attr]) { return; }
       }
@@ -78229,7 +78227,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 0.7.9 (Date 2018-02-26, Commit #8f8c01dd)');
+console.log('A-Frame Version: 0.7.9 (Date 2018-03-16, Commit #cf160006)');
 console.log('three Version:', pkg.dependencies['three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);
 
